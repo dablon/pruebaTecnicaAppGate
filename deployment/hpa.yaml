@@ -1,0 +1,17 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2beta1
+metadata:
+  name: pruebatecnica
+  namespace: appgate
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: pruebatecnica
+    apiVersion: apps/v1
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 50

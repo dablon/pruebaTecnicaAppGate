@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pruebatecnica
+  namespace: appgate
+  labels:
+    app: pruebatecnica
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: pruebatecnica
+  type: ClusterIP

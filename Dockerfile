@@ -3,7 +3,6 @@ RUN apk add py3-pip build-base python3-dev libffi-dev openssl-dev nginx haproxy
 RUN mkdir -p /opt/api 
 WORKDIR /opt/api 
 ADD api/requirements.txt /opt/api 
-RUN ls -la
 RUN pip3 install  -r /opt/api/requirements.txt 
 ADD api/. /opt/api 
 
